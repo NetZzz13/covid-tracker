@@ -1,0 +1,46 @@
+.app {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 0 auto;
+  @media (max-width: 990px) {
+    flex-direction: column;
+  }
+
+  &__left {
+    flex: 0.9;
+  }
+  &__dropdown {
+    background: #fff;
+  }
+
+  &__right {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__graph {
+    flex-grow: 1;
+  }
+
+  &__graphTitle {
+    margin: 20px 0;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  &__stats {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.app__right .MuiCardContent-root {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
