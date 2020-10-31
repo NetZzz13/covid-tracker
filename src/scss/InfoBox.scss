@@ -1,18 +1,41 @@
 .infoBox {
   flex: 1;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  &:hover {
+    opacity: 0.9;
+  }
+
+
+  @media (max-width: 490px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+
 
   &:not(:last-child) {
     margin-right: 15px;
+
+    @media (max-width: 490px) {
+      margin-right: 0;
+    }
   }
+
   &__cases {
     color: #cc1034;
     font-weight: 700;
     font-size: 1.75rem;
     margin-bottom: 0.5rem;
-    &--green{
+    &--green {
       color: #90ee90;
-     }
+    }
   }
   &__total {
     color: #6c757d;
@@ -22,10 +45,8 @@
 
   &__selected {
     border-top: 10px solid #90ee90;
-    
   }
-  &__red{
+  &__red {
     border-color: red;
   }
-
 }

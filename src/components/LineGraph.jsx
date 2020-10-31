@@ -82,7 +82,7 @@ const LineGraph = ({ casesType, ...props }) => {
             datasets: [
               {
                 data: data,
-                backgroundColor: "rgba(255, 99, 132, 0.2)",
+                backgroundColor: "rgba(255, 99, 132, 0.4)",
                 borderColor: "rgba(255, 99, 132, 1)",
               },
             ],

@@ -6,10 +6,13 @@
   margin: 0;
   list-style: none;
   outline: none;
-  font-family: 'Proxima Nova', Roboto, system-ui, Tahoma, sans-serif;
+  /* font-family: 'Proxima Nova', Roboto, system-ui, Tahoma, sans-serif; */
   box-sizing: border-box;
 }
-
+body,html {
+  margin: 0;
+  padding: 0;
+}
 html {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;

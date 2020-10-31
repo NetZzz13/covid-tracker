@@ -1,7 +1,17 @@
 import React from "react";
 import numeral from "numeral";
-import { Circle, Popup } from "react-leaflet";
+import { Circle, Popup, Marker } from "react-leaflet";
 import "./utils.scss";
+
+const MyMarker = (props) => {
+  const initMarker = (ref) => {
+    if (ref) {
+      ref.leafletElement.openPopup();
+    }
+  };
+
+  return <Marker ref={initMarker} {...props} />;
+};
 
 const casesTypeColors = {
   cases: {
@@ -22,7 +32,7 @@ export const sortData = (data) =>
   data.sort((a, b) => (a.cases > b.cases ? -1 : 1));
 
 export const prettyPrintStat = (stat) =>
-  stat ? `+${numeral(stat).format("0.0a")}` : "+0";
+  stat > 1000 ? `+${numeral(stat).format("0.0a")}` : stat;
 
 //DRAW circles on the map with interactive tooltip
 export const showDataonMap = (data, casesType) =>

@@ -6,6 +6,7 @@ import {
   Card,
   CardContent,
 } from "@material-ui/core";
+import logo from "./logo.png";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import InfoBox from "./components/InfoBox";
@@ -21,8 +22,8 @@ const App = () => {
   const [countryInfo, setCountryInfo] = useState({});
   const [tableData, setTableData] = useState([]);
   const [mapCenterZoom, setMapCenterZoom] = useState({
-    center: [34.80746, -40.4796],
-    zoom: 3,
+    center: [19.117199, 10.540922],
+    zoom: 2,
   });
 
   const [mapCountries, setMapCountries] = useState([]);
@@ -49,10 +50,10 @@ const App = () => {
       //&& for bug FIX mistakes of first country select and FIX of click on "worldwide" after clicks on other countries
       //setMapCenterZoom = {}, because I need set MapCenter and set MapZoom at the same time
       countryCode === "worldwide"
-        ? setMapCenterZoom({ center: [34.80746, -40.4796], zoom: 3 })
+        ? setMapCenterZoom({ center: [19.117199, 10.540922], zoom: 2 })
         : setMapCenterZoom({
             center: [data.data.countryInfo.lat, data.data.countryInfo.long],
-            zoom: 6,
+            zoom: 5,
           });
     });
   };
@@ -80,12 +81,18 @@ const App = () => {
     <div className="app">
       <div className="app__left">
         <div className="app__header">
-          <h1>COVID TRACKER</h1>
+          <div className="app__logo-block">
+            <img className="app__logo-block_img" src={logo} />
+            <h1 className="app__logo-block_title">COVID TRACKER</h1>
+          </div>
+
           <FormControl className="app__dropdown">
             <Select
               variant="outlined"
               value={country}
               onChange={onCountryChange}
+              style={{ backgroundColor: "transparent" }}
+              className="app__dropdown_select"
             >
               <MenuItem value="worldwide">Worldwide</MenuItem>
               {countries.map((elem, index) => (
@@ -135,7 +142,7 @@ const App = () => {
 
           <Table countries={tableData} />
 
-          <h3 className="app__graphTitle">WorldWide new {casesType}</h3>
+          <h3 className="app__graphTitle">Worldwide new {casesType}</h3>
           <LineGraph casesType={casesType} className="app__graph" />
         </CardContent>
       </Card>
