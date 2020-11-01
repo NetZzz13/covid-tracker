@@ -1,17 +1,8 @@
 import React from "react";
 import numeral from "numeral";
-import { Circle, Popup, Marker } from "react-leaflet";
+import { Circle, Popup} from "react-leaflet";
 import "./utils.scss";
 
-const MyMarker = (props) => {
-  const initMarker = (ref) => {
-    if (ref) {
-      ref.leafletElement.openPopup();
-    }
-  };
-
-  return <Marker ref={initMarker} {...props} />;
-};
 
 const casesTypeColors = {
   cases: {
@@ -47,7 +38,7 @@ export const showDataonMap = (data, casesType) =>
       }
       key={`${country}_${index}`}
     >
-      <Popup>
+      <Popup >
         <div className="info-container">
           <div
             className="info-flag"

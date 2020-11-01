@@ -1,5 +1,5 @@
 .map {
-  height: 600px;
+  height: 630px;
   background-color: white;
   padding: 1rem;
   border-radius: 20px;
@@ -7,6 +7,9 @@
   box-shadow: 0 0 8px -4px rgba(0, 0, 0, 0.5);
   @media (max-width: 990px) {
     margin-bottom: 16px;
+  }
+  @media (max-width: 490px) {
+    height: 400px;
   }
 }
 

@@ -7,7 +7,7 @@ import {
   CardContent,
 } from "@material-ui/core";
 import logo from "./logo.png";
-import { useEffect, useState } from "react";
+import { useEffect, useState} from "react";
 import axios from "axios";
 import InfoBox from "./components/InfoBox";
 import Map from "./components/Map";
@@ -46,7 +46,6 @@ const App = () => {
     await axios(url).then((data) => {
       setCountry(countryCode);
       setCountryInfo(data.data);
-
       //&& for bug FIX mistakes of first country select and FIX of click on "worldwide" after clicks on other countries
       //setMapCenterZoom = {}, because I need set MapCenter and set MapZoom at the same time
       countryCode === "worldwide"
@@ -82,7 +81,18 @@ const App = () => {
       <div className="app__left">
         <div className="app__header">
           <div className="app__logo-block">
-            <img className="app__logo-block_img" src={logo} />
+            <a
+              target="_blank"
+              href="https://www.linkedin.com/in/alexander-nemtsov-367667160/"
+              title="author Aliaksandr Nemtsau"
+              rel="noreferrer"
+            >
+              <img
+                className="app__logo-block_img"
+                src={logo}
+                alt="corona-logo"
+              />
+            </a>
             <h1 className="app__logo-block_title">COVID TRACKER</h1>
           </div>
 

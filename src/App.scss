@@ -12,9 +12,6 @@
     margin: 30px;
   }
 
-  @media (max-width: 490px) {
-    margin: 10px;
-  }
 
   &__left {
     flex: 0.9;
@@ -42,6 +39,11 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
+    @media (max-width: 490px) {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
   }
 
   &__stats {
@@ -59,6 +61,7 @@
     align-items: center;
     &_title {
       color: #fff;
+      line-height: 36px;
     }
     &_img {
       width: 80px;
@@ -87,4 +90,8 @@
     background-color: $scroll-color;
     border-radius: 10px;
   }
+}
+
+.MuiMenu-paper {
+  max-height: calc(100% - 325px)!important;
 }
